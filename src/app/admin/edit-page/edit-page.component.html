@@ -1,0 +1,59 @@
+
+<div *ngIf="form; else loading">
+  <form class="text-center border border-light p-5" action="#!" [formGroup]="form" (ngSubmit)="submit()">
+
+      <p class="h4 mb-4">Редактор товара</p>
+
+      <!-- Type -->
+      <div>
+          <label class="lab" for="type">Тип товара</label>
+          <select formControlName="type" class="form-control">
+            <option value="women">Для неё</option>
+            <option value="man">Для него</option>
+            <option value="flowers">Букет</option>
+            <option value="stock">Акция</option>
+          </select>
+          <div *ngIf="form.get('type').touched && form.get('type').invalid" class="validation">
+              <small *ngIf="form.get('type').errors.required">Выберите тип товара</small>
+          </div>
+      </div>
+
+      <!-- Title -->
+      <div>
+          <label class="lab" for="title">Название товара</label>
+          <input id="title" class="form-control" type="title" formControlName="title">
+          <div *ngIf="form.get('title').touched && form.get('title').invalid" class="validation">
+              <small *ngIf="form.get('title').errors.required">Введите название товара</small>
+          </div>
+      </div>
+
+      <!-- Photo -->
+      <div>
+          <label class="lab" for="photo">Фото</label>
+          <quill-editor  formControlName="photo"></quill-editor>
+      </div>
+
+      <!-- Info -->
+      <div>
+          <label class="lab" for="info">Информация о товаре</label>
+          <quill-editor  formControlName="info"></quill-editor>
+      </div>
+
+      <!-- Price -->
+      <div>
+          <label class="lab" for="price">Цена</label>
+          <input id="price" class="form-control" type="price" formControlName="price">
+          <div *ngIf="form.get('price').touched && form.get('price').invalid" class="validation">
+              <small *ngIf="form.get('price').errors.required">Введите цену товара</small>
+          </div>
+      </div>
+
+      <!-- Sign in button -->
+      <button class="btn btn-dark btn-block my-4" type="submit" [disabled]="form.invalid || submitted">Обновить товар</button>
+
+  </form>
+</div>
+
+<ng-template #loading>
+    <p class="text-center">Loading...</p>
+</ng-template>

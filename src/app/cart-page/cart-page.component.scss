@@ -1,0 +1,23 @@
+.right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.container {
+    margin-top: 60px;
+    max-width: 900px;
+}
+.empt{
+  margin-top: 150px;
+}
+form{
+  margin: auto;
+  max-width: 700px;
+  overflow: auto;
+}
+small{
+  color: red;
+}
+.lab{
+  padding: 5px 0;
+}

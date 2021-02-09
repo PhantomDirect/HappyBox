@@ -1,0 +1,38 @@
+<div class="header-bottom wow fadeIn slow" style="padding: 0 12px; height: 149px">
+    <h3 class="subtitle-h">
+        <a href="#" >
+            HAPPYBOXOMSK
+        </a>
+    </h3>
+</div>
+
+<div class="n-md wow fadeIn slow justify-content-center">
+    <div class="n-item">
+        <a class="n-link transition" routerLinkActive="active" (click)="setType('all')">
+            ВСЕ
+        </a>
+    </div>
+    <div class="n-item">
+        <a class="n-link transition" routerLinkActive="active" (click)="setType('women')">
+            ДЛЯ НЕЁ
+        </a>
+    </div>
+    <div class="n-item">
+        <a class="n-link transition" routerLinkActive="active" (click)="setType('man')">
+            ДЛЯ НЕГО
+        </a>
+    </div>
+    <div class="n-item">
+        <a class="n-link transition" routerLinkActive="active" (click)="setType('flowers')">
+            БУКЕТЫ
+        </a>
+    </div>
+    <div class="fill"></div>
+</div>
+
+<div class="dash-product">
+  <div *ngIf="products$ | async as products" class="dashboard">
+    <app-product *ngFor="let product of products | sorting: productServ.type" class="box" [product]="product">
+    </app-product>
+  </div>
+</div>

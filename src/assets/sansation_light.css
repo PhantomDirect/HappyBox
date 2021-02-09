@@ -1,0 +1,9 @@
+@font-face {
+	font-family: 'Sansation Light';
+	src: url('./fonts/sansation_light.eot'); /* IE 9 Compatibility Mode */
+	src: url('./fonts/sansation_light.eot?#iefix') format('embedded-opentype'), /* IE < 9 */
+		url('./fonts/sansation_light.woff2') format('woff2'), /* Super Modern Browsers */
+		url('./fonts/sansation_light.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
+		url('./fonts/sansation_light.ttf') format('truetype'), /* Safari, Android, iOS */
+		url('./fonts/sansation_light.svg#sansation_light') format('svg'); /* Chrome < 4, Legacy iOS */
+}
