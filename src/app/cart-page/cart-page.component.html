@@ -1,0 +1,68 @@
+<div class="container" *ngIf="cartProducts.length > 0; else empty">
+    <h2 class="text-center">Ваш заказ:</h2>
+
+    <table class="table">
+        <tbody>
+            <tr *ngFor="let cartProduct of cartProducts; let i = index">
+                <td>{{ cartProduct.type }}</td>
+                <td>{{ cartProduct.title }}</td>
+                <td>
+                    <button class="btn btn-danger" (click)="delete(cartProduct)" >Удалить</button>
+                </td>
+                <td>{{ cartProduct.price }} ₽</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <b class="right">Итоговая цена: {{totalPrice}} ₽</b>
+
+    <h2 class="text-center">Заказать:</h2>
+
+    <div *ngIf="added" class="text-center text-success">{{ added }}</div>
+
+    <form [formGroup]="form" (ngSubmit)="submit()" class="text-center border border-light p-5">
+
+        <div>
+            <label class="lab" for="name">Ваше имя</label>
+            <input id="name" type="name" formControlName="name" class="form-control">
+            <div *ngIf="form.get('name').touched && form.get('name').invalid" class="validation">
+                <small *ngIf="form.get('name').errors.required">Введите ваше имя</small>
+            </div>
+        </div>
+
+
+        <div>
+            <label class="lab" for="phone">Телефонный номер</label>
+            <input id="phone" type="phone" formControlName="phone" class="form-control">
+            <div *ngIf="form.get('phone').touched && form.get('phone').invalid" class="validation">
+                <small *ngIf="form.get('phone').errors.required">Введите ваш телефонный номер</small>
+            </div>
+        </div>
+
+        <div>
+            <label class="lab" for="address">Адрес</label>
+            <input id="address" type="address" formControlName="address" class="form-control">
+            <div *ngIf="form.get('address').touched && form.get('address').invalid" class="validation">
+                <small *ngIf="form.get('address').errors.required">Введите свой адрес</small>
+            </div>
+        </div>
+
+        <div>
+            <label class="lab" for="payment">Способ оплаты:</label>
+            <select formControlName="payment" class="form-control">
+                <option value="Cash">Наличные</option>
+                <option value="Card">Карта</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-dark btn-block mt-5" [disabled]="form.invalid || submitted">Заказать</button>
+
+
+    </form>
+</div>
+
+<ng-template #empty>
+  <div class="empt">
+    <h2 class="text-center">Корзина пустая, добавьте продукты!</h2>
+  </div>
+</ng-template>

@@ -1,0 +1,39 @@
+<div *ngIf="products.length; else loading">
+    <h2 class="text-center">Список продуктов</h2>
+
+    <div class="md-form">
+        <input type="text" placeholder="Поиск..." class="form-control" [(ngModel)]="productName">
+    </div>
+
+    <table class="table">
+        <thead class="black white-text">
+            <tr>
+                <th>ID</th>
+                <th>Название</th>
+                <th>Цена</th>
+                <th>Дата создания</th>
+                <th>Открыть</th>
+                <th>Удалить</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let product of products | search : productName ; let idx = index">
+                <td>{{ idx + 1 }}</td>
+                <td>{{ product.title }}</td>
+                <td>{{ product.price }} ₽</td>
+                <td>{{ product.date | date : 'medium'}}</td>
+                <td>
+                    <button class="btn btn-dark" [routerLink]="['/admin','product', product.id ,'edit']">Отрыть</button>
+                </td>
+                <td>
+                    <button class="btn btn-danger" (click)="remove(product.id)">Удалить</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<ng-template #loading>
+    <p class="text-center">Loading...</p>
+</ng-template>

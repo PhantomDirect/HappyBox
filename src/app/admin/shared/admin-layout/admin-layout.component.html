@@ -1,0 +1,62 @@
+<nav class="nav border-bottom justify-content-center pl-5 pr-5" style="border-bottom-color: #DEB887; background-color: black">
+  <div class="n-md wow fadeIn slow" *ngIf="auth.isAuthenticated(); else login" >
+      <a class="n-link" routerLink="/">
+          <h3 class="shop-main transition">HAPPYBOXOMSK</h3>
+      </a>
+      <div class="n-item">
+          <a class="n-link transition" routerLinkActive="active" [routerLink]="['/admin','dashboard']">
+              ПАНЕЛЬ ИНСТРУМЕНТОВ
+          </a>
+      </div>
+      <div class="n-item">
+          <a class="n-link transition" routerLinkActive="active" [routerLink]="['/admin','add']">
+              ДОБАВИТЬ ПРОДУКТ
+          </a>
+      </div>
+      <div class="n-item">
+          <a class="n-link transition" routerLinkActive="active" [routerLink]="['/admin','orders']">
+              ЗАКАЗЫ
+          </a>
+      </div>
+      <div class="n-item">
+          <a class="n-link transition" href="#" (click)="logout($event)">
+              ВЫХОД
+          </a>
+      </div>
+      <div class="fill"></div>
+      <div class="n-item" >
+          <div class="search-toggle dropdown">
+              <a class="n-link"  routerLinkActive="active" [routerLink]="['/admin','']" >
+                  <i class="fas fa-search fa-2x" aria-hidden="true"></i>
+              </a>
+
+              <!--<div class="dropdown-menu dropdown-primary">
+                <form class="form-inline waves-light" mdbWavesEffect>
+                  <div class="md-form mt-0">
+                    <input class="form-control mr-sm-2 dropdown-item" type="text" placeholder="Поиск...">
+                  </div>
+                </form>
+              </div>-->
+          </div>
+      </div>
+  </div>
+
+<ng-template #login>
+  <div class="n-md wow fadeIn slow">
+      <a class="n-link" routerLink="/">
+          <h3 class="shop-main transition">HAPPYBOXOMSK</h3>
+      </a>
+      <div class="n-item">
+          <a class="n-link transition" routerLinkActive="active" [routerLink]="['/admin','login']">
+              ВХОД
+          </a>
+      </div>
+  </div>
+</ng-template>
+
+</nav>
+
+
+<div class="container">
+    <router-outlet></router-outlet>
+</div>

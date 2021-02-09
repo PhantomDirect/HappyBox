@@ -1,0 +1,14 @@
+<a [routerLink]="['/product', product.id]">
+  <div class="text-center prod">
+        <div class="flex-center">
+            <quill-view-html [content]="product.photo" class="foto-product" theme = "snow"></quill-view-html>
+        </div>
+
+      <p>{{product.title}}</p>
+      <p class="price">{{product.price}} ₽</p>
+
+      <!--<button [routerLink]="['/product', product.id]" class="btn btn-dark">Открыть</button>
+
+      <button [routerLink]="['/cart']" class="btn btn-dark">Добавить в корзину</button>-->
+  </div>
+</a>

@@ -1,0 +1,22 @@
+.dash-product{
+  padding-top: 20px;
+  margin: auto;
+  max-width: 73%;
+  justify-content: center;
+}
+.dashboard{
+  display: flex;
+  flex-wrap: wrap;
+}
+.box{
+  max-width: 450px;
+  max-height: 450px;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+.n-item{
+  padding: 0 54px;
+}
+.n-link.active{
+  color: #DEB887;
+}

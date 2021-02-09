@@ -1,0 +1,7 @@
+@font-face {
+	font-family: 'Alta';
+	src: url('./fonts/COM4t-Fine-Regular.ttf.eot'); /* IE 9 Compatibility Mode */
+	src: url('./fonts/COM4t-Fine-Regular.ttf.eot#iefix') format('embedded-opentype'), /* IE < 9 */
+		url('./fonts/COM4t-Fine-Regular.ttf.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
+		url('./fonts/COM4t-Fine-Regular.ttf.svg#COM4t-Fine-Regular') format('svg'); /* Chrome < 4, Legacy iOS */
+}

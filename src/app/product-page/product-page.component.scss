@@ -1,0 +1,48 @@
+.flex{
+  display: flex;
+  flex-wrap: wrap;
+}
+.header{
+  margin-top: 100px;
+}
+.item{
+  padding: 5px 5px;
+  color: black;
+  font-size: 55px;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 20px;
+  text-align: center;
+}
+.foto-product{
+  max-width: 650px;
+  max-height: 650px;
+}
+img{
+  width: 650px;
+  height: 650px;
+  object-fit: cover;
+}
+.btn-text-light{
+    background: rgba(255, 255, 255, 0);
+    color: black;
+    transition-duration: 0.4s;
+    padding-left: 27px;
+
+    border: 1px solid white;
+}
+.btn-text-light:hover{
+    color: #DEB887;
+}
+.btn-text{
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 5px;
+    line-height: 16px;
+    font-size: 10px;
+    background: black;
+    color: white;
+    transition-duration: 0.4s;
+    padding: 21px 80px 21px 80px;
+}
+.btn-text:hover{
+    background-color: #DEB887;
+}
